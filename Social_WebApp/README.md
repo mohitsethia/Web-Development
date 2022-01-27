@@ -8,7 +8,7 @@ Link: https://calm-woodland-31742.herokuapp.com/
 Tech Stack used: 
 	Front-end: EJS, CSS, Javascript
 	Back-end: NodeJs, Express
-	Database: MySQL
+	Database: MonogDB
 
 ## Installation
 
