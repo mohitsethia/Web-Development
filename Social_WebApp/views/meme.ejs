@@ -1,0 +1,78 @@
+<html>
+
+<!-- header can be include from a different header.ejs file -->
+<%- include("header") -%>
+
+<!-- creating the first half of the page with form-->
+<div id="fhalf">
+
+	<h1 style="color:solid">Meme Stream</h1>
+
+	<!-- creating the form -->
+	<form action="/" class="info" method="post" style="color: solid;">
+	<div>
+		<label style="font-size: 18px;">Meme Owner</label>
+	</div>
+
+	<div>
+		<!-- taking input for name -->
+		<input type="text" class="ff" name="name" placeholder="Enter your full name" autocomplete="off" required>
+	</div>
+	
+	<div>
+		<label style="font-size: 18px;">Caption</label>
+	</div>
+	
+	<div>
+		<!-- taking input for caption -->
+		<input type="text" class="ff" name="caption" placeholder="Be creative with the caption" required>
+	</div>
+	
+	<div>
+		<label style="font-size: 18px;">Meme URL</label>
+	</div>
+	
+	<div>
+		<!-- taking input for url -->
+		<input type="url" class="ss" name="url" placeholder="Enter URL of your meme here">
+
+		<!-- button to submit the form data -->
+		<button class="w-100 btn btn-lg btn-primary" type="submit" value="meme">Submit Meme</button>
+	</div>
+	</form>
+</div>
+<hr>
+
+<!-- creating the second half with meme posts -->
+<div class="shalf">
+
+	<!-- showing all meme posts with name, caption and image-->
+	<% query.forEach(function(item){ %>
+
+		<!-- displaying the name of the meme owner -->
+		<h3 style="color: solid;"><%= item.name %></h3>
+
+		<!-- displaying the caption for the meme -->
+		<p style="margin-top:-20px; margin-bottom: 15px; color: solid;"><%= item.caption %></p>
+
+		<!-- displaying the image -->
+		<img src="<%= item.url %>" width="300px" height="350px" style="margin-top: -10px;"/>
+
+		<!-- displaying the number of likes -->
+		<p style="margin-top: -1px; margin-bottom: -2px; color: solid">Likes: <%= item.likes %> </p>
+
+		<!-- like button to like the post -->
+		<form action="/<%= item._id %>/likes" method="POST">
+			<button class="like">Like</button>
+		</form>
+
+		<!-- edit button to edit the post -->
+		<form action="/<%= item._id %>/edit" method="GET">
+			<button class="edit" style="margin-left: 40px; margin-top: -37px;">Edit</button>
+		</form>
+<%	}); %>
+</div>
+
+<!-- including the footer from a different file footer.ejs -->
+<%- include("footer") -%>
+</html>

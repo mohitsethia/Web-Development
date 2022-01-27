@@ -1,0 +1,31 @@
+{
+  "name": "xmeme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/mohitjain1998-me_buildout_xmeme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "14.15.4"
+  },
+  "dependencies": {
+    "alert": "^5.0.10",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "mongoose": "^5.11.15",
+    "popup": "0.0.3",
+    "popups": "^1.1.3",
+    "swagger-jsdoc": "^6.0.2",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

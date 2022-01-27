@@ -1,0 +1,28 @@
+<html style="background-image: url('https://forms.office.com/Images/Theme/meeting.png');">
+<!-- setting up the background of the whole page -->
+<!-- page generally has the form to update url and caption -->
+<%- include("header") -%>
+<h1 class="edit" style="margin-left: 300px">Edit Post</h1> 
+<!-- creating the form in a div -->
+<div id="fhalf" style="	width: 800px;margin: 50px auto;padding: 5px;bottom: none;opacity: 50%;">
+	<!-- what action to taken when the form is filled -->
+	<form class="info" action="/<%=query._id%>/edit" method="POST">
+		<div>
+			<label style="font-size:24px;">Caption</label>
+		</div>
+		<div>
+			<!-- new caption of the meme -->
+			<input type="text" class="ff" name="caption" placeholder="Be creative with the caption" style="outline: none;text-align: all;border-radius: 5px;display: inline-block;padding: 5px;height: 45px;background: transparent;font-size: 20px;font-weight: 200; width: 700px;" required>
+		</div>
+		<div>
+			<label style="font-size:24px;">Meme URL</label>
+		</div>
+		<div>
+			<!-- new url of the meme -->
+			<input type="url" class="ss" name="url" placeholder="Enter URL of your meme here" style="outline: none;text-align: all;border-radius: 5px;display: inline-block;padding: 5px;height: 45px;background: transparent;font-size: 20px;font-weight: 200;width: 520px;" >
+			<!-- Submitting the form data when the button is clicked -->
+			<button class="w-100 btn btn-lg btn-primary" type="submit" value="meme" style="outline: none;text-align: all;border-radius: 5px;display: inline-block;padding: 5px;height: 45px;background: blue;color: white;font-size: 20px;font-weight: 200;width: 175px;">Submit Meme</button>
+		</div>
+	</form>
+</div>
+</html>

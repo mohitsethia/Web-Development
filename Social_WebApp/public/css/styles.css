@@ -1,0 +1,65 @@
+/*styling the page with different classes/ids/tags*/
+
+#fhalf {
+	background: transparent;
+	max-width: 800px;
+	margin: 30px auto;
+	padding: 5px;
+}
+
+.info {
+	min-height: 60px;
+	display: block;
+	align-items: center;
+	border-bottom: 1px solid #F1F1F1;
+	padding: 5px;
+}
+
+input[type="text"] {
+	outline: none;
+	text-align: all;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+	height: 35px;
+	background: transparent;
+	font-size: 20px;
+	font-weight: 200;
+	width: 700px;
+}
+
+input[type="url"] {
+	outline: none;
+	text-align: all;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+	height: 35px;
+	background: transparent;
+	font-size: 20px;
+	font-weight: 200;
+	width: 520px;
+}
+
+.btn {
+	outline: none;
+	text-align: all;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+	height: 40px;
+	background: blue;
+	color: white;
+	font-size: 20px;
+	font-weight: 200;
+	width: 175px;
+}
+
+
+.shalf {
+	background: transparent;
+	max-width: 800px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	padding: 5px;
+}

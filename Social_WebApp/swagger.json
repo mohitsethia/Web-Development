@@ -1,0 +1,178 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Xmeme Backend made with Express and Documented with Swagger",
+    "title": "Xmeme Backend API Document by Mohit",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8081",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/memes": {
+      "get": {
+        "summary": "Retrives latest 100 memes",
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      },
+      "post": {
+        "summary": "To add a new meme",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "meme",
+            "schema": {
+              "type": "object",
+              "required": [
+                "name",
+                "caption",
+                "url"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Name of meme owner"
+                },
+                "caption": {
+                  "type": "string",
+                  "description": "Caption of the Meme"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Url of the meme"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Name, Caption or Url already exists"
+          }
+        }
+      }
+    },
+    "/memes/{id}": {
+      "get": {
+        "summary": "Retrives the details of the meme of given id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Meme ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Meme"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates meme of given id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Update Meme",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id",
+                "url",
+                "caption"
+              ],
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "description": "Id of the meme which needs to be updated"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "New Url"
+                },
+                "caption": {
+                  "type": "string",
+                  "description": "New Caption"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PatchRequest"
+            }
+          },
+          "409": {
+            "description": "Already exists"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Meme": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "PatchRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "caption"
+      ]
+    }
+  }
+}
